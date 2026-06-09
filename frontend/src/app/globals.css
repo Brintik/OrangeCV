@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Your custom OrangeCV Palette */
+  --color-brand-offwhite: #FDFBF7;
+  --color-brand-light-orange: #FFB347;
+  --color-brand-brown-orange: #CC5500;
+  --color-brand-dark: #3E2723;
+}
+
+body {
+  background-color: var(--color-brand-offwhite);
+  color: var(--color-brand-dark);
+}
