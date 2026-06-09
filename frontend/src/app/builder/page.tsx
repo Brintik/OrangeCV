@@ -223,10 +223,16 @@ export default function BuilderPage() {
     const html2pdf = (await import('html2pdf.js')).default;
     const element = document.querySelector('.ql-editor') as HTMLElement;
     if (!element) return;
+    
     const options = {
-      margin: 10, filename: 'OrangeCV_Resume.pdf', image: { type: 'jpeg' as const, quality: 0.98 },
-      html2canvas: { scale: 2 }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      margin: 10, 
+      filename: 'OrangeCV_Resume.pdf', 
+      image: { type: 'jpeg' as const, quality: 0.98 },
+      html2canvas: { scale: 2 }, 
+      // THE FIX: Add "as const" to 'portrait'
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' as const } 
     };
+    
     html2pdf().set(options).from(element).save();
   };
 
