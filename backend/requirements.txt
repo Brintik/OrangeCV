@@ -6,3 +6,4 @@ pdfplumber
 python-docx
 scikit-learn
 pydantic
+markitdown
